@@ -24,14 +24,14 @@ h1 {
 }
 
 #dino {
-    width: 10vw;
-    max-width: 40px;
+    width: 7vw;
+    max-width: 30px;
     height: 10vw;
-    max-height: 40px;
+    max-height: 30px;
     background-color: green;
     position: absolute;
     bottom: 0;
-    left: 60%;
+    left: 50%;
 }
 
 #cactus {
