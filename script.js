@@ -16,9 +16,9 @@ function jump() {
         let jumpCount = 0;
         const jumpInterval = setInterval(() => {
             if (jumpCount < 15) {
-                dino.style.bottom = `${parseInt(dino.style.bottom || '0') + 5}px`; // 增加跳跃高度
+                dino.style.bottom = `${parseInt(dino.style.bottom || '0') + 1}vh`; // 將 2vh 改為 1vh
             } else if (jumpCount < 30) {
-                dino.style.bottom = `${parseInt(dino.style.bottom) - 5}px`; // 增加下落速度
+                dino.style.bottom = `${parseInt(dino.style.bottom) - 1}vh`; // 將 2vh 改為 1vh
             } else {
                 clearInterval(jumpInterval);
                 isJumping = false;
@@ -36,6 +36,10 @@ document.addEventListener('keydown', (e) => {
 });
 
 jumpButton.addEventListener('click', jump);
+jumpButton.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    jump();
+});
 
 function moveCactus() {
     let position = 100;
@@ -47,17 +51,16 @@ function moveCactus() {
             score++;
             scoreDisplay.textContent = `得分: ${score}`;
         } else {
-            position -= 1;
+            position -= 0.5;
             cactus.style.right = `${position}%`;
         }
 
         const dinoRect = dino.getBoundingClientRect();
         const cactusRect = cactus.getBoundingClientRect();
         
-        // 调整碰撞检测的容差
         if (
-            dinoRect.right > cactusRect.left + 10 &&
-            dinoRect.left < cactusRect.right - 10 &&
+            dinoRect.right > cactusRect.left + 5 &&
+            dinoRect.left < cactusRect.right - 5 &&
             dinoRect.bottom > cactusRect.top + 5
         ) {
             gameOver();
@@ -78,7 +81,7 @@ function startGame() {
 function gameOver() {
     isGameRunning = false;
     clearInterval(cactusInterval);
-    alert('游戏结束!');
+    alert('遊戲結束!');
     startButton.style.display = 'block';
     jumpButton.style.display = 'none';
     cactus.style.right = '0%';
@@ -87,3 +90,7 @@ function gameOver() {
 }
 
 startButton.addEventListener('click', startGame);
+startButton.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    startGame();
+});
