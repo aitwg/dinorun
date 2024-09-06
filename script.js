@@ -16,9 +16,9 @@ function jump() {
         let jumpCount = 0;
         const jumpInterval = setInterval(() => {
             if (jumpCount < 15) {
-                dino.style.bottom = `${parseInt(dino.style.bottom || '0') + 1}vh`; // 將 2vh 改為 1vh
+                dino.style.bottom = `${parseInt(dino.style.bottom || '0') + 2}vh`; // 將 2vh 改為 1vh
             } else if (jumpCount < 30) {
-                dino.style.bottom = `${parseInt(dino.style.bottom) - 1}vh`; // 將 2vh 改為 1vh
+                dino.style.bottom = `${parseInt(dino.style.bottom) - 2}vh`; // 將 2vh 改為 1vh
             } else {
                 clearInterval(jumpInterval);
                 isJumping = false;
@@ -74,7 +74,7 @@ function startGame() {
     scoreDisplay.textContent = '得分: 0';
     startButton.style.display = 'none';
     jumpButton.style.display = 'block';
-    dino.style.left = '60%';
+    dino.style.left = '50%';
     moveCactus();
 }
 
@@ -86,7 +86,7 @@ function gameOver() {
     jumpButton.style.display = 'none';
     cactus.style.right = '0%';
     dino.style.bottom = '0px';
-    dino.style.left = '60%';
+    dino.style.left = '50%';
 }
 
 startButton.addEventListener('click', startGame);
