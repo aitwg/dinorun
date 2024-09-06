@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    touch-action: manipulation;
+}
+
+#game {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+
+#dino {
+    width: 40px;
+    height: 40px;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    left: 60%; /* 将恐龙移到右侧 */
+}
+
+#cactus {
+    width: 20px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#score {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#startButton, #jumpButton {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+#jumpButton {
+    display: none;
+}
