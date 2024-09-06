@@ -6,29 +6,39 @@ body {
     height: 100vh;
     margin: 0;
     touch-action: manipulation;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 #game {
-    width: 100%;
+    width: 90vw;
     max-width: 600px;
-    height: 150px;
+    height: 30vh;
     border: 1px solid black;
     position: relative;
     overflow: hidden;
 }
 
 #dino {
-    width: 40px;
-    height: 40px;
+    width: 10vw;
+    max-width: 40px;
+    height: 10vw;
+    max-height: 40px;
     background-color: green;
     position: absolute;
     bottom: 0;
-    left: 60%; /* 将恐龙移到右侧 */
+    left: 60%;
 }
 
 #cactus {
-    width: 20px;
-    height: 30px;
+    width: 5vw;
+    max-width: 20px;
+    height: 7.5vw;
+    max-height: 30px;
     background-color: red;
     position: absolute;
     bottom: 0;
@@ -36,7 +46,7 @@ body {
 }
 
 #score {
-    font-size: 24px;
+    font-size: 20px;
     margin: 10px 0;
 }
 
@@ -44,6 +54,11 @@ body {
     font-size: 18px;
     padding: 10px 20px;
     margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #jumpButton {
